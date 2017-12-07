@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Juin - Dégradé de couleurs</title>
+    <script src="jquery.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        #container {
+            display: flex;
+            border: 2px solid white;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .carre {
+            width: 8vw;
+            height: 8vw;
+            background-color: red;
+            margin: 30px 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="0" class="carre"></div>
+        <div id="1" class="carre"></div>
+        <div id="2" class="carre"></div>
+        <div id="3" class="carre"></div>
+        <div id="4" class="carre"></div>
+        <div id="5" class="carre"></div>
+        <div id="6" class="carre"></div>
+        <div id="7" class="carre"></div>
+        <div id="8" class="carre"></div>
+        <div id="9" class="carre"></div>
+        <div id="10" class="carre"></div>
+        <div id="11" class="carre"></div>
+        <div id="12" class="carre"></div>
+        <div id="13" class="carre"></div>
+        <div id="14" class="carre"></div>
+    </div>
+
+    <script>
+        var nbrCarre;
+        var couleurDiv;
+        var variation;
+
+        var rouge;
+        var bleu;
+        var vert;
+
+        Initialisation("rouge");
+        Rouge();
+
+        $(".carre").click(function() { // Pas besoin de nom car utilisée ICI
+            if ($(this).hasClass("rouge")) { // hasClass => this (=carre cliqué) donc si carré cliqué = rouge -> continue
+                rouge = this.id * variation; // Si id = 3 et la variation (teinte de la couleur rouge) = 25 -> 3*25 = 75
+                $(".rouge").removeClass("rouge"); //removeClass -> Sert à modifier les carrés rouges -> Deviennent verts
+                $("#container").fadeOut(300, function() {
+                    Initialisation("vert"); // Apparition des carrés verts
+                });
+                $("#container").delay(300).fadeIn(300); //delay = durée avant l'action
+            } else if ($(this).hasClass("vert")) {
+                vert = this.id * variation;
+                console.log(vert); // console.log ->Affiche le détail de la couleur dans la concole (F12) -> Pas utile pour le code
+                $(".vert").removeClass("vert");
+                $("#container").fadeOut(300, function() {
+                    Initialisation("bleu");
+                });
+                $("#container").delay(300).fadeIn(300);
+            } else if ($(this).hasClass("bleu")) {
+                bleu = this.id * variation;
+                $(".bleu").removeClass("bleu");
+                $("#container").fadeOut(300, function() {
+                    DisplayColor(); // Dès la disparition des carrés bleus (les derniers) -> Lancer la fonction 'DisplayColor'
+                });
+                Initialisation("rouge");
+            }
+        });
+
+        $(".carre").hover(function() {
+                $(this).css("border", "2px solid white");
+            },
+            function() {
+                $(this).css("border", "none");
+            });
+
+        function DisplayColor() {
+            $("body").css("background-color", "rgb(" + rouge + "," + vert + "," + bleu + ")"); // Affiche le résultat des trois couleurs
+        }
+
+        function Rouge() {
+            for (i = 0; i < nbrCarre; i++) {
+                couleurDiv[i] = i * variation;
+                $("#" + i).css("background-color", "rgb(" + couleurDiv[i] + ", 0, 0)"); // $("#" + i).css ... -> "#" permet de donner un id et le "+i" ajoute +1 (à chaque fois qu'il y a un carré en plus) 
+            }
+            $(".carre").addClass("rouge");
+        }
+
+        function Vert() {
+            for (i = 0; i < nbrCarre; i++) {
+                couleurDiv[i] = i * variation;
+                $("#" + i).css("background-color", "rgb(0," + couleurDiv[i] + ", 0)");
+            }
+            $(".carre").addClass("vert");
+        }
+
+        function Bleu() {
+            for (i = 0; i < nbrCarre; i++) {
+                couleurDiv[i] = i * variation;
+                $("#" + i).css("background-color", "rgb(0, 0," + couleurDiv[i] + ")");
+            }
+            $(".carre").addClass("bleu");
+        }
+
+        function Initialisation(couleur) {
+            nbrCarre = Random();
+            couleurDiv = Array(nbrCarre);
+            variation = SetVariation();
+
+            $(".carre").hide();
+            for (i = 0; i < nbrCarre; i++) {
+                $("#" + i).show();
+            }
+
+            if (couleur == "vert") {
+                Vert();
+            } else if (couleur == "bleu") {
+                Bleu();
+            }
+        }
+
+        function SetVariation() {
+            var variation = 255 / (nbrCarre - 1); // -1 -> Permet de commecer à 1 -> Il ne prend pas compte du 0
+            return variation.toFixed(0); // toFixed -> Permet de laisser tomber les décimales
+        }
+
+        function Random() {
+            var random = Math.random() * (14) + 2; // Pour avoir minimum 2 carrés -> Au moins le noir (=0) et la couleur (=255) rouge, verte ou bleue
+            return random.toFixed(0);
+        }
+    </script>
+</body>
+
+</html>

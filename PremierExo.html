@@ -1,0 +1,203 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Premier exercice</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script language="JavaScript">
+		function chargement(){
+			var random = Math.floor(Math.random() * 1000); // Car valeur maximum
+			document.getElementById("Alea").value = random;
+
+			var random2 = Math.floor(Math.random() * 1000);
+			document.getElementById("Alea2").value = random2;
+
+			/* Bloc4 */
+			chiffre = (random/1000)*600; // Stocker dans 'chiffre' la valeur qui fera bouger la barre / 600 = taille du width
+			document.getElementById("ReponseBloc4").innerHTML = random; // Random car no vt le mm nbr et 'innerHTML' car on modifie directement le code span
+			$("#Bloc4").animate({width:chiffre},{duration:600}); // width 'chiffre' permet de récuperer le nbr afin que l'animation prenne le bon espace
+			
+
+			/* Bloc5 */
+			chiffre2 = (random2/1000)*600;
+			document.getElementById("ReponseBloc5").innerHTML = random2;
+			$("#Bloc5").animate({width:chiffre2},{duration:600});
+
+		}
+
+		function clic(){
+			var Nbr1;
+			var Nbr2;
+			var Resultat;
+
+			if (document.getElementById("Valeur1")!=null){
+				Nbr1 = document.getElementById("Valeur1").value; /* Permet de récuperer la valeur(value) et de la stocker */
+			}
+
+			if (document.getElementById("Valeur2")!=null){
+				Nbr2 = document.getElementById("Valeur2").value;
+			}
+
+			/* Bloc3 */
+			Resultat=Nbr1*Nbr2;
+			document.getElementById("resultat").innerHTML=Resultat; /*Socker ds Resultat */
+			document.getElementById("ReponseBloc3").innerHTML=Resultat;
+
+			var valeur=(Resultat/900)*600; /* 900 = resultat max */
+			$("#Bloc3").animate({width:valeur});
+
+			/* Bloc1 */
+			document.getElementById("Bloc1").innerHTML=Nbr1;
+			var valeurValue1=(Nbr1*20); /* Nbr1 car c'est ici qu'on stocke la valeur * 20 car nbr max =30 (30*20 =600px) */
+			$("#Bloc1").animate({width:valeurValue1});
+
+			/* Bloc2 */
+			document.getElementById("Bloc2").innerHTML=Nbr2;
+			var valeurValue2=(Nbr2*20);
+			$("#Bloc2").animate({width:valeurValue2});
+
+		}
+	</script>
+	<style>
+		#Bloc1{
+			width: 0px; /* Mettre 0 permet l'animation */
+			height: 50px;
+			background-color: green;
+		}
+		#Bloc2{
+			width: 0px;
+			height: 50px;
+			background-color: red;
+		}
+		#Bloc3{
+			width: 0px;
+			height: 50px;
+			background-color: blue;
+		}
+		#Bloc4{
+			width: 0px;
+			height: 50px;
+			background-color: yellow;
+		}
+		#Bloc5{
+			width: 0px;
+			height: 50px;
+			background-color: orange;
+		}
+		.minimum{
+			margin-left: 10px;
+		}
+		.maximum{
+			margin-left: 600px;
+		}
+	</style>
+</head>
+<body onload="chargement()"> <!-- 'chargement' sert au random des barres jaune et orange --> 
+	<div id="Titre">
+		<h1>Test de l'exercice de multiplication</h1>
+	</div>
+	<div id="NbrAlea">
+		<p>Nombre aléatoire jaune : <input type="text" id="Alea" value="0" readonly="true"></p> <!-- 'input' sert lorsqu'on veut modifier le nbr librement --> 
+		<p>Nombre aléatoire orange : <input type="text" id="Alea2" value="0" readonly="true"></p>
+		<form>
+			<select id="Valeur1" onchange="clic()">
+				<option value=0>0</option>
+				<option value=1>1</option>
+				<option value=2>2</option>
+				<option value=3>3</option>
+				<option value=4>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+				<option value=7>7</option>
+				<option value=8>8</option>
+				<option value=9>9</option>
+				<option value=10>10</option>
+				<option value=11>11</option>
+				<option value=12>12</option>
+				<option value=13>13</option>
+				<option value=14>14</option>
+				<option value=15>15</option>
+				<option value=16>16</option>
+				<option value=17>17</option>
+				<option value=18>18</option>
+				<option value=19>19</option>
+				<option value=20>20</option>
+				<option value=21>21</option>
+				<option value=22>22</option>
+				<option value=23>23</option>
+				<option value=24>24</option>
+				<option value=25>25</option>
+				<option value=26>26</option>
+				<option value=27>27</option>
+				<option value=28>28</option>
+				<option value=29>29</option>
+				<option value=30>30</option>
+			</select> x
+			<select id="Valeur2" onchange="clic()">
+				<option value=0>0</option>
+				<option value=1>1</option>
+				<option value=2>2</option>
+				<option value=3>3</option>
+				<option value=4>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+				<option value=7>7</option>
+				<option value=8>8</option>
+				<option value=9>9</option>
+				<option value=10>10</option>
+				<option value=11>11</option>
+				<option value=12>12</option>
+				<option value=13>13</option>
+				<option value=14>14</option>
+				<option value=15>15</option>
+				<option value=16>16</option>
+				<option value=17>17</option>
+				<option value=18>18</option>
+				<option value=19>19</option>
+				<option value=20>20</option>
+				<option value=21>21</option>
+				<option value=22>22</option>
+				<option value=23>23</option>
+				<option value=24>24</option>
+				<option value=25>25</option>
+				<option value=26>26</option>
+				<option value=27>27</option>
+				<option value=28>28</option>
+				<option value=29>29</option>
+				<option value=30>30</option>
+			</select> =
+			<label id="resultat"></label> <!-- Pour recevoir la réponse -->
+		</form>
+		<div id="Jauges">
+			<div id="Bloc1">
+				<span class="span" id="ReponseBloc1"></span>
+			</div>
+			<div class="minimum">0</div>
+			<div class="maximum">30</div>
+
+			<div id="Bloc2">
+				<span class="span" id="ReponseBloc2"></span>
+			</div>
+			<div class="minimum">0</div>
+			<div class="maximum">30</div>
+
+			<div id="Bloc3">
+				<span class="span" id="ReponseBloc3"></span>
+			</div>
+			<div class="minimum">0</div>
+			<div class="maximum">900</div>
+
+			<div id="Bloc4">
+				<span class="span" id="ReponseBloc4"></span>
+			</div>
+			<div class="minimum">0</div>
+			<div class="maximum">1000</div>
+
+			<div id="Bloc5">
+				<span class="span" id="ReponseBloc5"></span>
+			</div>
+			<div class="minimum">0</div>
+			<div class="maximum">1000</div>
+		</div>
+		<button id="Restart" onclick="chargement()">Resset nombre</button>
+</body>
+</html>

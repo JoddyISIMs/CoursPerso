@@ -1,0 +1,25 @@
+Consignes
+
+L'examen consiste en la création d'un slider contenant des images de drapeaux. Lorsque le visiteur clique sur le bouton radio d'un pays, le slider slide jusqu'au drapeau correspondant.
+
+Voici 2 contenus de tableaux JavaScript dont vous aurez besoin : 
+('Flag_USA_small.png', 'flag-au.png', 'flag-nz.png', 'flags_0000_vietnam.png', 'flags_0001_unitedkingdom.png', 'flags_0002_unitedarabemirates.png', 'flags_0003_turkey.png', 'flags_0004_thailand.png', 
+'flags_0005_taiwan.png', 'flags_0006_sweden.png', 'flags_0007_spain.png', 'flags_0008_southafrica.png', 'flags_0009_singapore.png', 'flags_0010_saudiarabia.png', 'flags_0012_portugal.png', 'flags_0013_poland.png', 
+'flags_0014_phillipines.png', 'flags_0015_norway.png', 'flags_0016_mexico.png', 'flags_0017_malaysia.png', 'flags_0018_lebanon.png', 'flags_0019_korea.png', 'flags_0020_italy.png', 'flags_0021_israel.png', 
+'flags_0022_ireland.png', 'flags_0023_indonesia.png', 'flags_0024_india.png', 'flags_0025_hongkong.png', 'flags_0026_greece.png', 'flags_0027_germany.png', 'flags_0028_france.png', 'flags_0029_finland.png', 
+'flags_0030_denmark.png', 'flags_0031_croatia.png', 'flags_0032_china.png', 'flags_0033_canada.png', 'flags_0034_brazil.png', 'flags_0035_belgium.png', 'flags_0036_austria.png', 'flags_0037_switzerland.png');
+
+('USA', 'Australie', 'Nouvelle-Zélande', 'Vietnam', 'Royaume-Unis', 'Émirats Arabes Unis', 'Turquie', 'Thaïlande', 'Taïwan', 'Suède', 'Espagne', 'Afrique du Sud', 'Singapour', 'Arabie Saoudite', 'Portugal', 'Pologne', 
+'Philippines', 'Norvège', 'Mexique', 'Malaisie', 'Liban', 'Corée du Sud', 'Italie', 'Israël', 'Irlande', 'Indonésie', 'Inde', 'Hong Kong', 'Grèce', 'Allemagne', 'France', 'Finlande', 'Danmark', 'Croatie', 'Chine', 'Canada', 
+'Brésil', 'Belgique', 'Autriche', 'Suisse');
+
+Au chargement de la page, dynamiquement depuis les 2 contenus de tableaux fournis ci-dessus :
+- Piochez un nombre aléatoire N entre le nombre d'éléments dans les tableaux et le nombre d'éléments-10. 
+- Le slider est complété par N images de drapeaux disposées côte à côte horizontalement.
+- Les boutons radio sont disposés en 3 colonnes : N pays avec pour chaque, un bouton radio à côté du nom du pays.
+- Le bouton radio de la Belgique est coché par défaut et c'est son drapeau qui est visible
+
+Au clic sur un bouton radio, le slider change de position vers le drapeau visé. Son mouvement est visible. 
+
+
+

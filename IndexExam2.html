@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Examen juin 2016 Sébastien Thirionet</title>
+    <script src="jquery.js"></script>
+</head>
+<style>
+
+.NbArticle{height:50px;
+margin:5px;
+display:block;
+width:1000px;
+}
+
+.NbArticle:hover{
+    border: white 1px solid;
+}
+
+#content{
+    border:2px white solid;
+    padding:20px;
+}
+
+h1{
+    color: black;
+}
+
+.NbArticle{
+    background-color: white;
+}
+
+body{background-color:black;}
+</style>
+<body onload="chargement()">
+    <div id="content">
+        <div id="Article">
+            <!-- <h1>Titre</h1> -->
+        </div>
+        
+    
+    </div>
+
+</body>
+
+<script>
+
+var Arti=' ', i=0;
+
+var random=1+Math.floor(Math.random()*15);
+var r=random+1;
+
+
+
+    function chargement(){
+        for (i=1;i<r;i++)
+            {
+            Arti+=('<div class="NbArticle" onclick="clic(this)"> Titre '+i+' </div>');
+            document.getElementById('Article').innerHTML=Arti;
+        }
+    }
+
+/*var nbClick=0;
+var Titre='';
+
+    function clic(){
+        if (nbClick = 0){
+            $("#Titre").fadeIn(duration:300, height:auto;) {
+                    
+            }
+        }
+        if else{
+            $("#Titre").fadeOut(duration:300, height:auto;) {
+                    
+            }
+        }
+    }*/
+    
+    
+    
+
+</script>
+
+
+
+</html>

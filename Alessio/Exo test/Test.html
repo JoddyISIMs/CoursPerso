@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Test JavaScript</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox-1.3.1.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel-3.0.2.pack.js"></script>
+    <link href="test.css" rel="stylesheet">
+    <script language="JavaScript">
+        function Load() {
+            var random = Math.floor((Math.random() * 1000));
+            document.getElementById("Alea").value = random;
+
+            var random2 = Math.floor((Math.random() * 1000));
+            document.getElementById("Alea2").value = random2;
+
+            chiffre = (random / 1000) * 600;
+            document.getElementById("reponseA").innerHTML = random;
+            $("#barreA").animate({
+                width: chiffre
+            }, {
+                duration: 600
+            });
+
+            chiffre2 = (random2 / 1000) * 600;
+            document.getElementById("reponseB").innerHTML = random2;
+            $("#barreB").animate({
+                width: chiffre2
+            }, {
+                duration: 600
+            });
+
+            if (random == 1000) {
+                alert("Ca alors, vous avez fait 1000 !");
+            }
+        }
+
+        function Clic() {
+            var nbr1;
+            var nbr2;
+            var resultat;
+            var resultat2;
+            var resultat3;
+
+            if (document.getElementById('Chiffre1') != null) {
+                nbr1 = document.getElementById("Chiffre1").value;
+            }
+
+            if (document.getElementById('Chiffre2') != null) {
+                nbr2 = document.getElementById("Chiffre2").value;
+            }
+
+            resultat = nbr1 * nbr2;
+            document.getElementById("résultat").innerHTML = resultat;
+            document.getElementById("reponse").innerHTML = resultat;
+            var valeur = (resultat / 900) * 600;
+            $("#barre").animate({
+                width: valeur
+            }, {
+                duration: 900
+            });
+
+            resultat2 = nbr1;
+            document.getElementById("reponse2").innerHTML = resultat2;
+            var glisse1 = resultat2 * 20;
+            $("#barre2").animate({
+                width: glisse1
+            }, {
+                duration: 900
+            });
+
+            resultat3 = nbr2;
+            document.getElementById("reponse3").innerHTML = resultat3;
+            var glisse2 = resultat3 * 20;
+            $("#barre3").animate({
+                width: glisse2
+            }, {
+                duration: 900
+            });
+        }
+    </script>
+</head>
+
+<body onload="Load()" id="body">
+    <h1 id="test">Test de l'exo de multiplication</h1>
+
+    <h2 id="test2">Nombre aléatoire jaune : <input type="text" id="Alea" value="0" size="3" readonly="true"></h2>
+    <h2 id="test2">Nombre aléatoire orange : <input type="text" id="Alea2" value="0" size="3" readonly="true"></h2>
+
+
+    <form>
+        <select id="Chiffre1" onchange="Clic()">
+				<option value=0>0
+				<option value=1>1
+				<option value=2>2
+				<option value=3>3
+				<option value=4>4
+				<option value=5>5
+				<option value=6>6
+				<option value=7>7
+				<option value=8>8
+				<option value=9>9
+				<option value=10>10
+				<option value=11>11
+				<option value=12>12
+				<option value=13>13
+				<option value=14>14
+				<option value=15>15
+				<option value=16>16
+				<option value=17>17
+				<option value=18>18
+				<option value=19>19
+				<option value=20>20
+				<option value=21>21
+				<option value=22>22
+				<option value=23>23
+				<option value=24>24
+				<option value=25>25
+				<option value=26>26
+				<option value=27>27
+				<option value=28>28
+				<option value=29>29
+				<option value=30>30
+			</select> x
+
+        <select id="Chiffre2" onchange="Clic()">
+				<option value=0>0
+				<option value=1>1
+				<option value=2>2
+				<option value=3>3
+				<option value=4>4
+				<option value=5>5
+				<option value=6>6
+				<option value=7>7
+				<option value=8>8
+				<option value=9>9
+				<option value=10>10
+				<option value=11>11
+				<option value=12>12
+				<option value=13>13
+				<option value=14>14
+				<option value=15>15
+				<option value=16>16
+				<option value=17>17
+				<option value=18>18
+				<option value=19>19
+				<option value=20>20
+				<option value=21>21
+				<option value=22>22
+				<option value=23>23
+				<option value=24>24
+				<option value=25>25
+				<option value=26>26
+				<option value=27>27
+				<option value=28>28
+				<option value=29>29
+				<option value=30>30
+			</select> =
+
+        <label id="résultat"></label>
+    </form>
+
+    <div id="contour">
+        <div id="barre2"><span class="span" id="reponse2"></span></div>
+    </div>
+    <span id="min">0</span>
+    <span id="max">30</span>
+
+    <div id="contour">
+        <div id="barre3"><span id="reponse3" class="span"></span></div>
+    </div>
+    <span id="min">0</span>
+    <span id="max">30</span>
+
+    <div id="contour">
+        <div id="barre"><span id="reponse" class="span"></span></div>
+    </div>
+    <span id="min">0</span>
+    <span id="max">900</span>
+
+    <div id="contour">
+        <div id="barreA"><span id="reponseA" class="span"></span></div>
+    </div>
+    <span id="min">0</span>
+    <span id="max">1000</span>
+
+    <div id="contour">
+        <div id="barreB"><span id="reponseB" class="span"></span></div>
+    </div>
+    <span id="min">0</span>
+    <span id="max">1000</span>
+
+    <br>
+    <br>
+    <button onclick="Load()">Relancer le random</button>
+</body>
+
+</html>

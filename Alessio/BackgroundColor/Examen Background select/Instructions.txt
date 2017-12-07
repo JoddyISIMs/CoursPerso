@@ -1,0 +1,27 @@
+Examen de TR2INT
+
+Internet et GSM sont interdits.
+Vous avez 2 heures.
+
+Le sujet est une interface de choix de couleur
+
+En HTMLet CSS,
+Le fond est noir et 3 fieldset vides sont codés en HTML (il y en aura un pour le rouge, un pour le vert et un pour le bleu). 
+2 d'entre eux (le vert et le bleu) sont invisibles (attention à choisir une propriété CSS qui permettra le fadeIn() jQuery !).
+
+Au chargement de la page,
+Un nombre aléatoire x entre 2 et 16 est pioché et servira de degré de précision dans le choix de la couleur rouge.
+Le fieldset rouge se remplit de x blocs avec chacun une couleur de background propre (style interne !) 
+La couleur du premier bloc est noir (composante rouge à zéro), la couleur du dernier est rouge vif (composante rouge au maximum). 
+Les autres blocs présentent un dégradé alllant du noir au rouge.
+Tuyau : la syntaxe rgb(255,255,255); sera peut-être plus facile à manipuler car évite l'hexadécimale...
+Les x blocs se trouvent côte à côte sur une même ligne.
+Au survol d'un bloc, sa bordure devient blanche. Veillez à ce que l'apparition de la bordure ne fasse pas "sauter" les autres éléments.
+Idem pour le vert.
+Idem pour le bleu.
+
+Au clic sur un bloc, 
+La valeur du bloc est enregistrée (par exemple si le bloc rouge dont la couleur est rgb(128,0,0) est cliqué, on enregistre le 128.
+Le fieldset où il se trouve disparait avec un effet jQuery.
+Le fieldset suivant (s'il y en a un) apparait avec un effet jQuery. Il apparait en haut de la page là où se trouvait le fieldset précédent.
+Lorsque le fieldset bleu disparait, le body se colore en reprenant la combinaison des 3 choix. Par exemple 128 en rouge, 64 en vert et 256 en bleu.

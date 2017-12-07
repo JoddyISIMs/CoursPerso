@@ -1,0 +1,65 @@
+body{
+			background-color: #111111;
+			font-family: Avenir;
+			color: white;
+		}
+		#contour{
+			margin-top: 40px;
+			border-width: 2px;
+			border-style: :solid;
+			border-color: white;
+			height: 50px;
+			width: 600px;
+		}
+		#barre{
+			background-color: #00DD00;
+			height: 50px;
+			width: 0px;
+		}
+		#min{
+			font-size: 20px;
+		}
+		#max{
+			font-size: 20px;
+			margin-left: 575px;
+		}
+
+		#barre2{
+			background-color: cyan;
+			height: 50px;
+			width: 0px;
+		}
+
+		#barre3{
+			background-color: red;
+			height: 50px;
+			width: 0px;
+		}
+		#barreA{
+			background-color: yellow;
+			height: 50px;
+			width: 0px;
+		}
+		#barreB{
+			background-color: orange;
+			height: 50px;
+			width: 0px;
+		}
+		.span{
+			float: right;
+			font-size: 15px;
+			margin:5px 5px 0px 0px;
+			color: #111111;
+		}
+		#Alea{
+		background-color:#111111;
+		border:#111111 none 0px;
+		font-size:25px;
+		color:yellow;
+		}
+		#Alea2{
+		background-color:#111111;
+		border:#111111 none 0px;
+		font-size:25px;
+		color:orange;
+		}

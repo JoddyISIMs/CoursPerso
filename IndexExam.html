@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Examen - Random Texte</title>
+    <script src="jquery.js"></script>
+    <style>
+        .BlocText{
+            width:1000px;
+            /*border: solid black 1px;*/
+        }
+
+        h1{
+            width: 1000px;
+            height: 50px;
+            border: solid black 1px;
+        }
+    </style>
+</head>
+
+<body onload="chargement()">
+    <div id="container">
+        <div class="BlocText" id="Bloc">
+            <h1>Titre<h1>
+            <p>Accedat huc suavitas quaedam oportet sermonum atque morum, haudquaquam mediocre condimentum amicitiae. Tristitia autem et in omni re severitas habet illa quidem gravitatem, sed amicitia remissior esse debet et liberior et dulcior et ad omnem comitatem facilitatemque proclivior.<P>
+        </div>
+    </div>
+
+    <script>
+    var Article;
+    var aleatoireArt = 1 + Math.floor(Math.random()) * 14;
+    /*var aleatoireParag = 1 + Math.floor(Math.random()) * 4;*/
+
+        function chargement(){
+        for (i=0;i<r;i++)
+        {
+            Article+=('<div class="BlocText"> </div>');
+            document.getElementById('Bloc').innerHTML=Article;
+        }
+    }
+
+      
+    </script>
+</body>
+
+</html>

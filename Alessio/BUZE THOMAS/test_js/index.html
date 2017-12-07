@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Buze Thomas - Games</title>
+	<meta name="author" content="Buze Thomas">
+	<link href="style.css" rel="stylesheet" title="Style">
+	<script src="jquery.js"></script>
+</head>
+
+<body onload="load()">
+
+	<div id="infos">
+		<img src="arrow_left.png" onclick="move(1)"/>
+		<img src="arrow_up.png" onclick="move(2)"/>
+		<img src="arrow_right.png" onclick="move(3)"/>
+		<img src="arrow_down.png" onclick="move(4)"/>
+		<h3>Avancer de<br/><span id="cases"></span><br>case(s)</h3>
+	</div>
+	
+	<table id="content"></table>
+	
+	<script src="gen_table.js"></script>
+	<script src="game.js"></script>
+	
+</body>
+</html>
